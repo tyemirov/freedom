@@ -1,0 +1,5055 @@
+{
+  "version": "2.3",
+  "jurisdictions": [
+    {
+      "name": "Alabama",
+      "tax_proxies": {
+        "income_effective_rate": 0.05,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0043,
+        "marginal_keep_penalty": 0.35,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Alaska",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0124,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 5,
+              "median_days": 120,
+              "penalty_severity": 0.65
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 199,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 8,
+              "penalty_severity": 0.39
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 17,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Arizona",
+      "tax_proxies": {
+        "income_effective_rate": 0.025,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.006,
+        "marginal_keep_penalty": 0.325,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Arkansas",
+      "tax_proxies": {
+        "income_effective_rate": 0.044,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0066,
+        "marginal_keep_penalty": 0.344,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "California",
+      "tax_proxies": {
+        "income_effective_rate": 0.133,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0081,
+        "marginal_keep_penalty": 0.433,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 11,
+              "median_days": 300,
+              "penalty_severity": 0.95
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 418,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 6,
+              "median_days": 20,
+              "penalty_severity": 0.57
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 41,
+              "penalty_severity": 0.76
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.76
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.57
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Colorado",
+      "tax_proxies": {
+        "income_effective_rate": 0.044,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0052,
+        "marginal_keep_penalty": 0.344,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Connecticut",
+      "tax_proxies": {
+        "income_effective_rate": 0.0699,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0216,
+        "marginal_keep_penalty": 0.3699,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 10,
+              "median_days": 270,
+              "penalty_severity": 0.9
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 382,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 18,
+              "penalty_severity": 0.54
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 37,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.54
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delaware",
+      "tax_proxies": {
+        "income_effective_rate": 0.04,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0062,
+        "marginal_keep_penalty": 0.33999999999999997,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Florida",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0089,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 5,
+              "median_days": 120,
+              "penalty_severity": 0.65
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 199,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 8,
+              "penalty_severity": 0.39
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 17,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Georgia",
+      "tax_proxies": {
+        "income_effective_rate": 0.0549,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0095,
+        "marginal_keep_penalty": 0.3549,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Hawaii",
+      "tax_proxies": {
+        "income_effective_rate": 0.11,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0029,
+        "marginal_keep_penalty": 0.41,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 10,
+              "median_days": 270,
+              "penalty_severity": 0.9
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 382,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 18,
+              "penalty_severity": 0.54
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 37,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.54
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Idaho",
+      "tax_proxies": {
+        "income_effective_rate": 0.058,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0063,
+        "marginal_keep_penalty": 0.358,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 5,
+              "median_days": 120,
+              "penalty_severity": 0.65
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 199,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 8,
+              "penalty_severity": 0.39
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 17,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Illinois",
+      "tax_proxies": {
+        "income_effective_rate": 0.0495,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0229,
+        "marginal_keep_penalty": 0.3495,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 10,
+              "median_days": 270,
+              "penalty_severity": 0.9
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 382,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 18,
+              "penalty_severity": 0.54
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 37,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.54
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Indiana",
+      "tax_proxies": {
+        "income_effective_rate": 0.0305,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0083,
+        "marginal_keep_penalty": 0.3305,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Iowa",
+      "tax_proxies": {
+        "income_effective_rate": 0.04,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0159,
+        "marginal_keep_penalty": 0.33999999999999997,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Kansas",
+      "tax_proxies": {
+        "income_effective_rate": 0.057,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.014,
+        "marginal_keep_penalty": 0.357,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Kentucky",
+      "tax_proxies": {
+        "income_effective_rate": 0.045,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0089,
+        "marginal_keep_penalty": 0.345,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Louisiana",
+      "tax_proxies": {
+        "income_effective_rate": 0.0425,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0062,
+        "marginal_keep_penalty": 0.34249999999999997,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Maine",
+      "tax_proxies": {
+        "income_effective_rate": 0.0715,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0129,
+        "marginal_keep_penalty": 0.3715,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 8,
+              "median_days": 210,
+              "penalty_severity": 0.8
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 309,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 14,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 29,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Maryland",
+      "tax_proxies": {
+        "income_effective_rate": 0.0575,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0107,
+        "marginal_keep_penalty": 0.3575,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 10,
+              "median_days": 270,
+              "penalty_severity": 0.9
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 382,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 18,
+              "penalty_severity": 0.54
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 37,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.54
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Massachusetts",
+      "tax_proxies": {
+        "income_effective_rate": 0.09,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0119,
+        "marginal_keep_penalty": 0.39,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 10,
+              "median_days": 270,
+              "penalty_severity": 0.9
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 382,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 18,
+              "penalty_severity": 0.54
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.4
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 37,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.54
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Michigan",
+      "tax_proxies": {
+        "income_effective_rate": 0.0425,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0145,
+        "marginal_keep_penalty": 0.34249999999999997,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 8,
+              "median_days": 210,
+              "penalty_severity": 0.8
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 309,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 14,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 29,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Minnesota",
+      "tax_proxies": {
+        "income_effective_rate": 0.0985,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.011,
+        "marginal_keep_penalty": 0.39849999999999997,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 9,
+              "median_days": 240,
+              "penalty_severity": 0.85
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 345,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 16,
+              "penalty_severity": 0.51
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 33,
+              "penalty_severity": 0.68
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.68
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.51
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Mississippi",
+      "tax_proxies": {
+        "income_effective_rate": 0.05,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0081,
+        "marginal_keep_penalty": 0.35,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Missouri",
+      "tax_proxies": {
+        "income_effective_rate": 0.0495,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.01,
+        "marginal_keep_penalty": 0.3495,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Montana",
+      "tax_proxies": {
+        "income_effective_rate": 0.0675,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0083,
+        "marginal_keep_penalty": 0.3675,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 5,
+              "median_days": 120,
+              "penalty_severity": 0.65
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 199,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 8,
+              "penalty_severity": 0.39
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 17,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Nebraska",
+      "tax_proxies": {
+        "income_effective_rate": 0.0584,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.017,
+        "marginal_keep_penalty": 0.3584,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Nevada",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0055,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "New Hampshire",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0209,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 5,
+              "median_days": 120,
+              "penalty_severity": 0.65
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 199,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 8,
+              "penalty_severity": 0.39
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 17,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "New Jersey",
+      "tax_proxies": {
+        "income_effective_rate": 0.1075,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0246,
+        "marginal_keep_penalty": 0.4075,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 11,
+              "median_days": 300,
+              "penalty_severity": 0.95
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 418,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 6,
+              "median_days": 20,
+              "penalty_severity": 0.57
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 41,
+              "penalty_severity": 0.76
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.76
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.57
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "New Mexico",
+      "tax_proxies": {
+        "income_effective_rate": 0.059,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0084,
+        "marginal_keep_penalty": 0.359,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 8,
+              "median_days": 210,
+              "penalty_severity": 0.8
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 309,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 14,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 29,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "New York",
+      "tax_proxies": {
+        "income_effective_rate": 0.109,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0173,
+        "marginal_keep_penalty": 0.409,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 11,
+              "median_days": 300,
+              "penalty_severity": 0.95
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 418,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 6,
+              "median_days": 20,
+              "penalty_severity": 0.57
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.4
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 41,
+              "penalty_severity": 0.76
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.76
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.57
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "North Carolina",
+      "tax_proxies": {
+        "income_effective_rate": 0.045,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.008,
+        "marginal_keep_penalty": 0.345,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "North Dakota",
+      "tax_proxies": {
+        "income_effective_rate": 0.025,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0102,
+        "marginal_keep_penalty": 0.325,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 5,
+              "median_days": 120,
+              "penalty_severity": 0.65
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 199,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 8,
+              "penalty_severity": 0.39
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 17,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ohio",
+      "tax_proxies": {
+        "income_effective_rate": 0.0399,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0157,
+        "marginal_keep_penalty": 0.3399,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Oklahoma",
+      "tax_proxies": {
+        "income_effective_rate": 0.0475,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0099,
+        "marginal_keep_penalty": 0.3475,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Oregon",
+      "tax_proxies": {
+        "income_effective_rate": 0.099,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0092,
+        "marginal_keep_penalty": 0.399,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 10,
+              "median_days": 270,
+              "penalty_severity": 0.9
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 7,
+              "median_days": 382,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 18,
+              "penalty_severity": 0.54
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 4,
+              "median_days": 37,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 5,
+              "median_days": 0,
+              "penalty_severity": 0.7200000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.54
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Pennsylvania",
+      "tax_proxies": {
+        "income_effective_rate": 0.0307,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0156,
+        "marginal_keep_penalty": 0.3307,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 8,
+              "median_days": 210,
+              "penalty_severity": 0.8
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 309,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 14,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.4
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 29,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Rhode Island",
+      "tax_proxies": {
+        "income_effective_rate": 0.0599,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0154,
+        "marginal_keep_penalty": 0.3599,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 9,
+              "median_days": 240,
+              "penalty_severity": 0.85
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 345,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 16,
+              "penalty_severity": 0.51
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.4
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 33,
+              "penalty_severity": 0.68
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.68
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.51
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "South Carolina",
+      "tax_proxies": {
+        "income_effective_rate": 0.07,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0058,
+        "marginal_keep_penalty": 0.37,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "South Dakota",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0124,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 4,
+              "median_days": 90,
+              "penalty_severity": 0.6
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 163,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.36
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 1,
+              "median_days": 13,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.36
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Tennessee",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0065,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 5,
+              "median_days": 120,
+              "penalty_severity": 0.65
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 199,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 8,
+              "penalty_severity": 0.39
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 17,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.52
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Texas",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.019,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 1,
+              "median_days": 3,
+              "penalty_severity": 0.1
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Utah",
+      "tax_proxies": {
+        "income_effective_rate": 0.0485,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0057,
+        "marginal_keep_penalty": 0.3485,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 6,
+              "median_days": 150,
+              "penalty_severity": 0.7
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 236,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 3,
+              "median_days": 10,
+              "penalty_severity": 0.42
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 2,
+              "median_days": 21,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.5599999999999999
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.42
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Vermont",
+      "tax_proxies": {
+        "income_effective_rate": 0.0875,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0189,
+        "marginal_keep_penalty": 0.38749999999999996,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 9,
+              "median_days": 240,
+              "penalty_severity": 0.85
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 345,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 16,
+              "penalty_severity": 0.51
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.4
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 33,
+              "penalty_severity": 0.68
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.68
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.51
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Virginia",
+      "tax_proxies": {
+        "income_effective_rate": 0.0575,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0083,
+        "marginal_keep_penalty": 0.3575,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Washington",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0093,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 9,
+              "median_days": 240,
+              "penalty_severity": 0.85
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 345,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 5,
+              "median_days": 16,
+              "penalty_severity": 0.51
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 33,
+              "penalty_severity": 0.68
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.68
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.51
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "West Virginia",
+      "tax_proxies": {
+        "income_effective_rate": 0.0512,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0059,
+        "marginal_keep_penalty": 0.3512,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 7,
+              "median_days": 180,
+              "penalty_severity": 0.75
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 5,
+              "median_days": 272,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 12,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 3,
+              "median_days": 9,
+              "penalty_severity": 0.30000000000000004
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 25,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.6000000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.44999999999999996
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wisconsin",
+      "tax_proxies": {
+        "income_effective_rate": 0.0765,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0171,
+        "marginal_keep_penalty": 0.3765,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 4,
+              "median_days": 44,
+              "penalty_severity": 0.51
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 3,
+              "median_days": 156,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 8,
+              "median_days": 210,
+              "penalty_severity": 0.8
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 6,
+              "median_days": 309,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 4,
+              "median_days": 14,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 3,
+              "median_days": 29,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 4,
+              "median_days": 0,
+              "penalty_severity": 0.6400000000000001
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 3,
+              "median_days": 0,
+              "penalty_severity": 0.48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wyoming",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.05,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0061,
+        "marginal_keep_penalty": 0.3,
+        "household_adjustment": {
+          "single": 1.0,
+          "couple_no_kids": 0.98,
+          "couple_one_kid": 0.95,
+          "couple_two_kids": 0.92,
+          "single_parent_two_kids": 0.9
+        }
+      },
+      "domains": {
+        "housing_rent": {
+          "actions": [
+            {
+              "name": "Short-term rental permit",
+              "permission_count": 2,
+              "median_days": 14,
+              "penalty_severity": 0.36
+            },
+            {
+              "name": "Eviction/Lease flexibility",
+              "permission_count": 1,
+              "median_days": 66,
+              "penalty_severity": 0.6
+            }
+          ]
+        },
+        "housing_buy": {
+          "actions": [
+            {
+              "name": "Build ADU / Expand",
+              "permission_count": 4,
+              "median_days": 90,
+              "penalty_severity": 0.6
+            },
+            {
+              "name": "Zoning variance",
+              "permission_count": 4,
+              "median_days": 163,
+              "penalty_severity": 0.5
+            }
+          ]
+        },
+        "business": {
+          "actions": [
+            {
+              "name": "Start LLC",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.36
+            }
+          ]
+        },
+        "school": {
+          "actions": [
+            {
+              "name": "Homeschool",
+              "permission_count": 2,
+              "median_days": 6,
+              "penalty_severity": 0.2
+            }
+          ]
+        },
+        "speech": {
+          "actions": [
+            {
+              "name": "Assembly Permit",
+              "permission_count": 1,
+              "median_days": 13,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "privacy": {
+          "actions": [
+            {
+              "name": "Data compliance",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.48
+            }
+          ]
+        },
+        "mobility": {
+          "actions": [
+            {
+              "name": "Vehicle reg",
+              "permission_count": 2,
+              "median_days": 0,
+              "penalty_severity": 0.36
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

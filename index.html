@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Freedom vs Control — Goal-Weighted, Action-Based</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div>
+      <h1>Freedom vs Control — Action-Based Score</h1>
+      <p>
+        This version is <span class="mono">action-based</span>: each domain is defined by concrete actions.
+        Your goals change the weights, then the site ranks jurisdictions with radar + scatter + table.
+        <a href="https://tyemirov.net/freedom" style="color:var(--accent); text-decoration:none; margin-left:8px;" class="mono small">tyemirov.net/freedom</a>
+      </p>
+      <div class="pillRow">
+        <div class="pill">No backend</div>
+        <div class="pill">Action-based friction</div>
+        <div class="pill">Goal-weighted</div>
+        <div class="pill">Import/export JSON</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      <div class="notice">
+        The built-in dataset is still a starter, but the structure is now “real-data-ready”:
+        fill action friction from statutes + admin timelines + penalties, then paste JSON.
+      </div>
+
+      <h3>Personal context</h3>
+      <div class="row">
+        <label for="incomeValue">Annual gross income (USD)</label>
+        <input id="incomeValue" type="number" min="0" step="1000" value="400000" />
+      </div>
+      <div class="row">
+        <label for="householdType">Household</label>
+        <select id="householdType">
+          <option value="single">Single</option>
+          <option value="couple_no_kids">Couple, no kids</option>
+          <option value="couple_one_kid">Couple, one kid</option>
+          <option value="couple_two_kids" selected>Couple, two kids</option>
+          <option value="single_parent_two_kids">Single parent, two kids</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="spendRatio">Spend ratio (share of income spent)</label>
+        <input id="spendRatio" type="number" min="0" max="1" step="0.01" value="0.55" />
+      </div>
+      <div class="row">
+        <label for="homeValue">Home value proxy (USD)</label>
+        <input id="homeValue" type="number" min="0" step="10000" value="1200000" />
+      </div>
+
+      <h3>Goals (what “freedom” means to you)</h3>
+      <div class="toggleGroup">
+        <label class="toggle"><input id="goalHousingRent" type="checkbox" checked /><div><strong>Renting latitude</strong><span>Short-term/lease freedom</span></div></label>
+        <label class="toggle"><input id="goalHousingBuy" type="checkbox" checked /><div><strong>Building/Ownership</strong><span>Zoning/ADU/Expansion</span></div></label>
+        <label class="toggle"><input id="goalBusiness" type="checkbox" checked /><div><strong>Business agility</strong><span>Start/hire/contract</span></div></label>
+        <label class="toggle"><input id="goalSchoolChoice" type="checkbox" /><div><strong>Schooling choice</strong><span>Homeschool/curriculum</span></div></label>
+        <label class="toggle"><input id="goalSpeech" type="checkbox" /><div><strong>Speech/assembly</strong><span>Protest/speech latitude</span></div></label>
+        <label class="toggle"><input id="goalPrivacy" type="checkbox" /><div><strong>Privacy</strong><span>Surveillance/reporting</span></div></label>
+        <label class="toggle"><input id="goalMobility" type="checkbox" /><div><strong>Mobility</strong><span>Driving/movement constraints</span></div></label>
+      </div>
+
+      <h3>Weighting (fiscal vs permission control)</h3>
+      <div class="sliderRow">
+        <div><label for="weightFiscal">Fiscal control (tax) weight</label><input id="weightFiscal" type="range" min="0" max="100" value="60" /></div>
+        <div class="sliderValue mono" id="weightFiscalValue">60</div>
+      </div>
+      <div class="sliderRow">
+        <div><label for="weightPermission">Permission control (regulation) weight</label><input id="weightPermission" type="range" min="0" max="100" value="40" /></div>
+        <div class="sliderValue mono" id="weightPermissionValue">40</div>
+      </div>
+      <div class="small">The two weights are auto-normalized to sum to 1.</div>
+
+      <div class="buttonRow">
+        <button id="recomputeButton">Recompute</button>
+        <button class="secondary" id="resetButton">Reset defaults</button>
+      </div>
+
+      <details style="margin-top:20px;">
+        <summary>Methodology & Sources</summary>
+        <div class="small" style="margin-top:10px;">
+          <p>This application uses the <strong>Full 50-State Dataset (v2.2)</strong>. Metrics are synthesized from the following primary sources:</p>
+          <ul style="padding-left:18px; margin:8px 0;">
+            <li><strong>Fiscal:</strong> <a href="https://taxfoundation.org/research/all/state/2025-state-tax-competitiveness-index/" target="_blank" style="color:var(--accent);">Tax Foundation (2025 Index)</a></li>
+            <li><strong>Schooling:</strong> <a href="https://hslda.org/legal" target="_blank" style="color:var(--accent);">HSLDA Regulatory Tiers</a></li>
+            <li><strong>Regulatory/Land Use:</strong> <a href="https://www.freedominthe50states.org/" target="_blank" style="color:var(--accent);">Cato Institute: Freedom in the 50 States</a></li>
+            <li><strong>Zoning Friction:</strong> <a href="https://www.mercatus.org/publications/urban-economics/freedom-50-states" target="_blank" style="color:var(--accent);">Mercatus Land Use Index</a></li>
+          </ul>
+          <p>Domain friction is computed by mapping these indices to action-based components: <em>permission count</em>, <em>wait times</em>, and <em>penalties</em>.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="panel">
+      <h2>Results</h2>
+
+      <div class="notice" style="margin-bottom:14px;">
+        <strong>Compare Jurisdictions:</strong> Select up to 6 jurisdictions to view on the charts.
+        <div id="selectionList" class="pillRow" style="margin-top:10px; max-height:120px; overflow-y:auto; border:1px solid var(--border); padding:10px; border-radius:10px;">
+          <!-- Checkboxes will be injected here -->
+        </div>
+        <div class="buttonRow">
+          <button class="secondary" id="selectAllBtn">Select all</button>
+          <button class="secondary" id="selectNoneBtn">Clear selection</button>
+        </div>
+      </div>
+
+      <div class="charts">
+        <div class="chartBox"><div id="radarChart" style="width:100%;height:360px;"></div></div>
+        <div class="chartBox"><div id="scatterChart" style="width:100%;height:360px;"></div></div>
+      </div>
+
+      <div class="tableBox">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:50px;">Rank</th>
+              <th>Jurisdiction</th>
+              <th class="right">Freedom</th>
+              <th class="right">Fiscal ctrl</th>
+              <th class="right">Perm ctrl</th>
+              <th>Top binding domains</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+
+      <div class="notice" style="margin-top:14px;">
+        Higher <span class="mono">Freedom</span> means lower combined control given your weights and goals.
+        Radar shows domain freedom (1 - domain friction). Scatter shows fiscal vs permission control (lower-left is freer).
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:40px; padding-bottom:40px; opacity:0.6;" class="small mono">
+    &copy; 2026 <a href="https://tyemirov.net" style="color:var(--text); text-decoration:none;">tyemirov.net</a> | 
+    <a href="https://tyemirov.net/freedom" style="color:var(--text); text-decoration:none;">The Vector of Liberty</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

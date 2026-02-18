@@ -1,0 +1,165 @@
+{
+  "version": "2.0",
+  "notes": "Enhanced dataset with realistic proxies from Tax Foundation (2025), HSLDA, and Mercatus.",
+  "jurisdictions": [
+    {
+      "name": "California",
+      "tax_proxies": {
+        "income_effective_rate": 0.12,
+        "payroll_effective_rate": 0.01,
+        "sales_effective_rate": 0.0725,
+        "property_effective_rate": 0.0081,
+        "marginal_keep_penalty": 0.55,
+        "household_adjustment": { "single": 1.0, "couple_no_kids": 0.98, "couple_one_kid": 0.95, "couple_two_kids": 0.92, "single_parent_two_kids": 0.90 }
+      },
+      "domains": {
+        "housing": { "actions": [
+          { "name": "Build ADU", "permission_count": 8, "median_days": 180, "penalty_severity": 0.7, "weight": 1.0 },
+          { "name": "Major remodel permit", "permission_count": 6, "median_days": 120, "penalty_severity": 0.6, "weight": 0.8 }
+        ]},
+        "business": { "actions": [
+          { "name": "Start LLC + compliance", "permission_count": 6, "median_days": 21, "penalty_severity": 0.5, "weight": 1.0 },
+          { "name": "Hire employee compliance", "permission_count": 7, "median_days": 14, "penalty_severity": 0.6, "weight": 0.8 }
+        ]},
+        "school": { "actions": [
+          { "name": "Homeschool compliance (Tier 2)", "permission_count": 1, "median_days": 1, "penalty_severity": 0.3, "weight": 1.0 }
+        ]},
+        "speech": { "actions": [
+          { "name": "Organize protest permit", "permission_count": 4, "median_days": 30, "penalty_severity": 0.5, "weight": 1.0 }
+        ]},
+        "privacy": { "actions": [
+          { "name": "Data collection compliance (CCPA)", "permission_count": 5, "median_days": 60, "penalty_severity": 0.8, "weight": 1.0 }
+        ]},
+        "mobility": { "actions": [
+          { "name": "Vehicle compliance/smog", "permission_count": 4, "median_days": 1, "penalty_severity": 0.4, "weight": 1.0 }
+        ]}
+      }
+    },
+    {
+      "name": "Texas",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.0,
+        "sales_effective_rate": 0.0625,
+        "property_effective_rate": 0.019,
+        "marginal_keep_penalty": 0.37,
+        "household_adjustment": { "single": 1.0, "couple_no_kids": 1.0, "couple_one_kid": 1.0, "couple_two_kids": 1.0, "single_parent_two_kids": 1.0 }
+      },
+      "domains": {
+        "housing": { "actions": [
+          { "name": "Build ADU", "permission_count": 4, "median_days": 60, "penalty_severity": 0.4, "weight": 1.0 },
+          { "name": "Major remodel permit", "permission_count": 3, "median_days": 30, "penalty_severity": 0.4, "weight": 0.8 }
+        ]},
+        "business": { "actions": [
+          { "name": "Start LLC + compliance", "permission_count": 3, "median_days": 5, "penalty_severity": 0.3, "weight": 1.0 },
+          { "name": "Hire employee compliance", "permission_count": 4, "median_days": 5, "penalty_severity": 0.4, "weight": 0.8 }
+        ]},
+        "school": { "actions": [
+          { "name": "Homeschool compliance (Tier 1)", "permission_count": 0, "median_days": 0, "penalty_severity": 0.1, "weight": 1.0 }
+        ]},
+        "speech": { "actions": [
+          { "name": "Organize protest permit", "permission_count": 2, "median_days": 7, "penalty_severity": 0.3, "weight": 1.0 }
+        ]},
+        "privacy": { "actions": [
+          { "name": "Data collection compliance", "permission_count": 2, "median_days": 0, "penalty_severity": 0.4, "weight": 1.0 }
+        ]},
+        "mobility": { "actions": [
+          { "name": "Vehicle compliance", "permission_count": 2, "median_days": 0, "penalty_severity": 0.3, "weight": 1.0 }
+        ]}
+      }
+    },
+    {
+      "name": "Florida",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.0,
+        "sales_effective_rate": 0.06,
+        "property_effective_rate": 0.0089,
+        "marginal_keep_penalty": 0.37,
+        "household_adjustment": { "single": 1.0, "couple_no_kids": 1.0, "couple_one_kid": 1.0, "couple_two_kids": 1.0, "single_parent_two_kids": 1.0 }
+      },
+      "domains": {
+        "housing": { "actions": [
+          { "name": "Build ADU", "permission_count": 5, "median_days": 90, "penalty_severity": 0.5, "weight": 1.0 }
+        ]},
+        "business": { "actions": [
+          { "name": "Start LLC + compliance", "permission_count": 3, "median_days": 5, "penalty_severity": 0.3, "weight": 1.0 }
+        ]},
+        "school": { "actions": [
+          { "name": "Homeschool compliance (Tier 2)", "permission_count": 1, "median_days": 1, "penalty_severity": 0.2, "weight": 1.0 }
+        ]},
+        "speech": { "actions": [
+          { "name": "Organize protest permit", "permission_count": 3, "median_days": 14, "penalty_severity": 0.4, "weight": 1.0 }
+        ]},
+        "privacy": { "actions": [
+          { "name": "Data collection compliance", "permission_count": 2, "median_days": 0, "penalty_severity": 0.4, "weight": 1.0 }
+        ]},
+        "mobility": { "actions": [
+          { "name": "Vehicle compliance", "permission_count": 2, "median_days": 0, "penalty_severity": 0.3, "weight": 1.0 }
+        ]}
+      }
+    },
+    {
+      "name": "New York",
+      "tax_proxies": {
+        "income_effective_rate": 0.09,
+        "payroll_effective_rate": 0.02,
+        "sales_effective_rate": 0.088,
+        "property_effective_rate": 0.0173,
+        "marginal_keep_penalty": 0.60,
+        "household_adjustment": { "single": 1.0, "couple_no_kids": 0.95, "couple_one_kid": 0.925, "couple_two_kids": 0.90, "single_parent_two_kids": 0.85 }
+      },
+      "domains": {
+        "housing": { "actions": [
+          { "name": "Build ADU / Remodel", "permission_count": 9, "median_days": 200, "penalty_severity": 0.8, "weight": 1.0 }
+        ]},
+        "business": { "actions": [
+          { "name": "Start LLC + compliance", "permission_count": 7, "median_days": 30, "penalty_severity": 0.6, "weight": 1.0 }
+        ]},
+        "school": { "actions": [
+          { "name": "Homeschool compliance (Tier 4)", "permission_count": 5, "median_days": 30, "penalty_severity": 0.7, "weight": 1.0 }
+        ]},
+        "speech": { "actions": [
+          { "name": "Organize protest permit", "permission_count": 5, "median_days": 45, "penalty_severity": 0.6, "weight": 1.0 }
+        ]},
+        "privacy": { "actions": [
+          { "name": "Data collection compliance", "permission_count": 4, "median_days": 0, "penalty_severity": 0.6, "weight": 1.0 }
+        ]},
+        "mobility": { "actions": [
+          { "name": "Vehicle/Movement compliance", "permission_count": 5, "median_days": 14, "penalty_severity": 0.5, "weight": 1.0 }
+        ]}
+      }
+    },
+    {
+      "name": "New Hampshire",
+      "tax_proxies": {
+        "income_effective_rate": 0.0,
+        "payroll_effective_rate": 0.0,
+        "sales_effective_rate": 0.0,
+        "property_effective_rate": 0.0209,
+        "marginal_keep_penalty": 0.35,
+        "household_adjustment": { "single": 1.0, "couple_no_kids": 1.0, "couple_one_kid": 1.0, "couple_two_kids": 1.0, "single_parent_two_kids": 1.0 }
+      },
+      "domains": {
+        "housing": { "actions": [
+          { "name": "Build ADU", "permission_count": 4, "median_days": 60, "penalty_severity": 0.4, "weight": 1.0 }
+        ]},
+        "business": { "actions": [
+          { "name": "Start LLC + compliance", "permission_count": 2, "median_days": 3, "penalty_severity": 0.2, "weight": 1.0 }
+        ]},
+        "school": { "actions": [
+          { "name": "Homeschool compliance (Tier 3)", "permission_count": 3, "median_days": 14, "penalty_severity": 0.4, "weight": 1.0 }
+        ]},
+        "speech": { "actions": [
+          { "name": "Organize protest permit", "permission_count": 1, "median_days": 1, "penalty_severity": 0.2, "weight": 1.0 }
+        ]},
+        "privacy": { "actions": [
+          { "name": "Data collection compliance", "permission_count": 1, "median_days": 0, "penalty_severity": 0.3, "weight": 1.0 }
+        ]},
+        "mobility": { "actions": [
+          { "name": "Vehicle compliance", "permission_count": 2, "median_days": 0, "penalty_severity": 0.3, "weight": 1.0 }
+        ]}
+      }
+    }
+  ]
+}
