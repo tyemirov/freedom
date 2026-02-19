@@ -1,0 +1,26 @@
+{
+  "name": "freedom",
+  "version": "1.0.0",
+  "description": "**Live Project:** [tyemirov.net/freedom](https://tyemirov.net/freedom)",
+  "main": "script.js",
+  "scripts": {
+    "test:data": "python scripts/validate_dataset.py",
+    "test:ui": "node --test tests/index.smoke.test.mjs",
+    "test": "npm run test:data && npm run test:ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyemirov/freedom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tyemirov/freedom/issues"
+  },
+  "homepage": "https://github.com/tyemirov/freedom#readme",
+  "devDependencies": {
+    "playwright-core": "^1.58.2"
+  }
+}

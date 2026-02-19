@@ -307,6 +307,11 @@ function setSliderLabels(){
 }
 
 function recomputeAndRender(){
+  const dataset = applicationState.dataset;
+  if (!dataset || !Array.isArray(dataset.jurisdictions)) {
+    return;
+  }
+
   const settings = {
     incomeUsd: safeNumber(document.getElementById("incomeValue").value, 400000),
     householdType: document.getElementById("householdType").value,
@@ -317,7 +322,6 @@ function recomputeAndRender(){
     weightPermissionRaw: safeNumber(document.getElementById("weightPermission").value, 40)
   };
 
-  const dataset = applicationState.dataset;
   let results = dataset.jurisdictions.map(function(j){ return computeFreedomScore(j, settings); });
   results.sort(function(a,b){ return b.freedomScore - a.freedomScore; });
 

@@ -22,14 +22,41 @@ This repository contains a tool for quantifying liberty by decomposing it into a
 -   **Interactive Visualizations:**
     *   **Radar Chart:** Compare domain-specific freedom (higher is freer).
     *   **Scatter Plot:** Visualize the trade-off between Fiscal Control (taxes) and Permission Control (regulation).
--   **Jurisdiction Selector:** Compare up to 6 states side-by-side.
+-   **Jurisdiction Selector:** Compare jurisdictions side-by-side.
 
 ## Technical Structure
 
 -   `index.html`: The core UI, styled with vanilla CSS for maximum performance and portability.
 -   `script.js`: The calculation engine and Plotly.js implementation.
--   `full_states_dataset.json`: A v2.3 dataset containing granular metrics for all 50 US states.
--   `article.md`: The philosophical foundation for the project, intended for publication on [tyemirov.net](https://tyemirov.net/freedom).
+-   `full_states_dataset.json`: A v2.5 dataset containing granular metrics for all 50 US states.
+-   `article2.md`: The publication draft for the project essay, intended for [tyemirov.net](https://tyemirov.net/freedom).
+
+### Dataset Notes
+
+Each domain is defined by a small set of concrete actions. Actions use:
+-   `permission_count`, `median_days`, `penalty_severity` (0..1)
+-   Optional: `weight`, `days_max`, `permission_max`, `source`
+
+See `DATASET.md` for the full schema and proxy-generation methodology. To refresh the crawled inputs and re-apply transforms:
+
+```bash
+python scripts/update_dataset.py --write
+python scripts/validate_dataset.py
+```
+
+## Testing
+
+Run all checks (dataset invariants + `index.html` browser smoke tests):
+
+```bash
+npm test
+```
+
+Run only UI smoke tests:
+
+```bash
+npm run test:ui
+```
 
 ## Sources & Methodology
 
