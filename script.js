@@ -1,4 +1,25 @@
-const applicationState = { dataset: null, selectedJurisdictions: new Set() };
+const applicationState = { dataset: null, stateShapes: null, selectedJurisdictions: new Set() };
+
+const stateCodes = {
+  "Alabama": "al", "Alaska": "ak", "Arizona": "az", "Arkansas": "ar", "California": "ca",
+  "Colorado": "co", "Connecticut": "ct", "Delaware": "de", "Florida": "fl", "Georgia": "ga",
+  "Hawaii": "hi", "Idaho": "id", "Illinois": "il", "Indiana": "in", "Iowa": "ia",
+  "Kansas": "ks", "Kentucky": "ky", "Louisiana": "la", "Maine": "me", "Maryland": "md",
+  "Massachusetts": "ma", "Michigan": "mi", "Minnesota": "mn", "Mississippi": "ms", "Missouri": "mo",
+  "Montana": "mt", "Nebraska": "ne", "Nevada": "nv", "New Hampshire": "nh", "New Jersey": "nj",
+  "New Mexico": "nm", "New York": "ny", "North Carolina": "nc", "North Dakota": "nd", "Ohio": "oh",
+  "Oklahoma": "ok", "Oregon": "or", "Pennsylvania": "pa", "Rhode Island": "ri", "South Carolina": "sc",
+  "South Dakota": "sd", "Tennessee": "tn", "Texas": "tx", "Utah": "ut", "Vermont": "vt",
+  "Virginia": "va", "Washington": "wa", "West Virginia": "wv", "Wisconsin": "wi", "Wyoming": "wy"
+};
+
+function getStateSilhouette(stateName, size = 20) {
+  if (!applicationState.stateShapes || !applicationState.stateShapes[stateName]) {
+    return "";
+  }
+  const path = applicationState.stateShapes[stateName];
+  return `<svg width="${size}" height="${size}" viewBox="0 0 100 100" class="state-silhouette"><path d="${path}" fill="currentColor"/></svg>`;
+}
 
 function renderSelectionList(){
   const container = document.getElementById("selectionList");
@@ -29,6 +50,16 @@ function renderSelectionList(){
     });
 
     label.appendChild(cb);
+    
+    const silhouetteHtml = getStateSilhouette(j.name, 16);
+    if (silhouetteHtml) {
+      const span = document.createElement("span");
+      span.innerHTML = silhouetteHtml;
+      span.style.display = "flex";
+      span.style.color = "var(--muted)";
+      label.appendChild(span);
+    }
+
     label.appendChild(document.createTextNode(j.name));
     container.appendChild(label);
   });
@@ -81,7 +112,7 @@ function goalDomainWeights(goalsObject){
 function computeEffectiveTaxBurden(jurisdiction, incomeUsd, householdType, spendRatio, homeValueUsd){
   const tax = jurisdiction.tax_proxies || {};
   const incomeEffectiveRate = clampNumber(safeNumber(tax.income_effective_rate, 0), 0, 0.8);
-  const payrollEffectiveRate = clampNumber(safeNumber(tax.payroll_effective_rate, 0), 0, 0.3);
+  const payroll_effective_rate = clampNumber(safeNumber(tax.payroll_effective_rate, 0), 0, 0.3);
   const salesEffectiveRate = clampNumber(safeNumber(tax.sales_effective_rate, 0), 0, 0.25);
   const propertyEffectiveRate = clampNumber(safeNumber(tax.property_effective_rate, 0), 0, 0.05);
 
@@ -90,7 +121,7 @@ function computeEffectiveTaxBurden(jurisdiction, incomeUsd, householdType, spend
   const adjustedIncomeRate = clampNumber(incomeEffectiveRate * householdFactor, 0, 0.8);
 
   const incomeTaxPaid = incomeUsd * adjustedIncomeRate;
-  const payrollTaxPaid = incomeUsd * payrollEffectiveRate;
+  const payrollTaxPaid = incomeUsd * payroll_effective_rate;
   const salesTaxPaid = (incomeUsd * clampNumber(spendRatio, 0, 1)) * salesEffectiveRate;
   const propertyTaxPaid = homeValueUsd * propertyEffectiveRate;
 
@@ -112,8 +143,8 @@ function normalizeActionFriction(action){
   const medianDays = Math.max(0, safeNumber(action.median_days, 0));
   const penaltySeverity = clampNumber(safeNumber(action.penalty_severity, 0.5), 0, 1);
 
-  const permissionMax = Math.max(1, safeNumber(action.permission_max, 10));
-  const daysMax = Math.max(1, safeNumber(action.days_max, 180));
+  const permissionMax = Math.max(1, safeNumber(action.permission_max, 15)); // Increased from 10
+  const daysMax = Math.max(1, safeNumber(action.days_max, 400)); // Increased from 180
 
   const permissionNormalized = clampNumber(permissionCount / permissionMax, 0, 1);
   const daysNormalized = clampNumber(medianDays / daysMax, 0, 1);
@@ -198,9 +229,16 @@ function renderTable(sortedResults){
     rankCell.textContent = String(indexValue + 1);
 
     const nameCell = document.createElement("td");
+    const silhouetteHtml = getStateSilhouette(result.jurisdictionName, 24);
+    
     nameCell.innerHTML =
-      "<div><strong>" + result.jurisdictionName + "</strong></div>" +
-      "<div class='small'>Marginal keep proxy: <span class='mono'>" + Math.round(result.marginalKeepRate * 100) + "%</span></div>";
+      "<div style='display: flex; align-items: center;'>" +
+        (silhouetteHtml ? `<div style="margin-right: 12px; color: var(--accent); flex-shrink: 0; display: flex; align-items: center;">${silhouetteHtml}</div>` : "") +
+        "<div>" +
+          "<strong>" + result.jurisdictionName + "</strong>" +
+          "<div class='small'>Marginal keep proxy: <span class='mono'>" + Math.round(result.marginalKeepRate * 100) + "%</span></div>" +
+        "</div>" +
+      "</div>";
 
     const freedomCell = document.createElement("td");
     freedomCell.className = "right mono";
@@ -264,12 +302,12 @@ function renderRadar(sortedResults){
   const layout = {
     paper_bgcolor:"rgba(0,0,0,0)", plot_bgcolor:"rgba(0,0,0,0)",
     margin:{ l:40, r:40, t:30, b:30 },
-    legend:{ font:{ color:"#b8c0e6", size:11 } },
+    legend:{ font:{ color:"#000", size:12, weight: 700 } },
           polar:{
             bgcolor:"rgba(0,0,0,0)",
-            radialaxis:{ visible:true, range:[0,1], angle:90, tickangle:90, tickfont:{ color:"#b8c0e6", size:9 }, gridcolor:"rgba(32,40,70,0.5)" },
-            angularaxis:{ tickfont:{ color:"#b8c0e6", size:10 }, gridcolor:"rgba(32,40,70,0.5)", rotation:90, direction:"clockwise" }
-          },    title:{ text:"Domain Freedom (higher is freer)", font:{ color:"#e8ecff", size:12 } }
+            radialaxis:{ visible:true, range:[0,1], angle:90, tickangle:90, tickfont:{ color:"#000", size:10, weight: 700 }, gridcolor:"rgba(0,0,0,0.15)" },
+            angularaxis:{ tickfont:{ color:"#000", size:12, weight: 800 }, gridcolor:"rgba(0,0,0,0.15)", rotation:90, direction:"clockwise" }
+          },    title:{ text:"Domain Freedom (higher is freer)", font:{ color:"#000", size:15, family:"Avenir Next, sans-serif", weight: 900 } }
   };
   Plotly.newPlot("radarChart", plotData, layout, { displayModeBar:false, responsive:true });
 }
@@ -286,15 +324,15 @@ function renderScatter(sortedResults){
     text: sortedResults.map(function(r){ return r.jurisdictionName; }),
     textposition:"top center",
     hovertemplate: "Jurisdiction: %{text}<br>Fiscal control: %{x:.3f}<br>Permission control: %{y:.3f}<extra></extra>",
-    marker:{ size:10 }
+    marker:{ size:10, color: "#0f6d4d", line: { color: "#000", width: 1 } }
   }];
 
   const layout = {
     paper_bgcolor:"rgba(0,0,0,0)", plot_bgcolor:"rgba(0,0,0,0)",
     margin:{ l:55, r:30, t:30, b:50 },
-    xaxis:{ title:{ text:"Fiscal control (higher = more tax burden)", font:{ color:"#e8ecff", size:12 } }, tickfont:{ color:"#b8c0e6" }, gridcolor:"rgba(32,40,70,0.8)", zeroline:false, range:[0,0.7] },
-    yaxis:{ title:{ text:"Permission control (higher = more friction)", font:{ color:"#e8ecff", size:12 } }, tickfont:{ color:"#b8c0e6" }, gridcolor:"rgba(32,40,70,0.8)", zeroline:false, range:[0,0.9] },
-    title:{ text:"Control Map (lower-left is freer)", font:{ color:"#e8ecff", size:12 } },
+    xaxis:{ title:{ text:"Fiscal control (higher = more tax burden)", font:{ color:"#000", size:13, weight: 700 } }, tickfont:{ color:"#000", size: 11 }, gridcolor:"rgba(0,0,0,0.15)", zerolinecolor: "rgba(0,0,0,0.3)", range:[0,0.7] },
+    yaxis:{ title:{ text:"Permission control (higher = more friction)", font:{ color:"#000", size:13, weight: 700 } }, tickfont:{ color:"#000", size: 11 }, gridcolor:"rgba(0,0,0,0.15)", zerolinecolor: "rgba(0,0,0,0.3)", range:[0,0.9] },
+    title:{ text:"Control Map (lower-left is freer)", font:{ color:"#000", size:15, family:"Avenir Next, sans-serif", weight: 900 } },
     showlegend:false
   };
 
@@ -336,11 +374,19 @@ function recomputeAndRender(){
 
 async function loadDefaultDataset() {
   try {
-    const response = await fetch("full_states_dataset.json");
-    if (!response.ok) throw new Error("Could not load full_states_dataset.json");
-    const data = await response.json();
+    const [datasetRes, shapesRes] = await Promise.all([
+      fetch("full_states_dataset.json"),
+      fetch("state_shapes.json")
+    ]);
+    
+    if (!datasetRes.ok) throw new Error("Could not load full_states_dataset.json");
+    if (!shapesRes.ok) throw new Error("Could not load state_shapes.json");
+    
+    const data = await datasetRes.json();
+    const shapes = await shapesRes.json();
     
     applicationState.dataset = data;
+    applicationState.stateShapes = shapes;
     applicationState.selectedJurisdictions.clear();
     
     // Default select first few if many
@@ -351,7 +397,7 @@ async function loadDefaultDataset() {
     renderSelectionList();
     recomputeAndRender();
   } catch (error) {
-    console.error("Dataset load error:", error);
+    console.error("Data load error:", error);
   }
 }
 

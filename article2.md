@@ -53,7 +53,7 @@ Taxation is not just funding; it is also control. It reduces the share of your l
 Whatever your moral view of taxes, the mechanical metric is straightforward:
 
 - How much of your income is mandatorily extracted (income, payroll, sales, property)?
-- What is your **marginal keep rate**: how much of the *next* dollar earned do you actually retain?
+- What is your **marginal keep proxy**: a focused estimate of how much of the *next* dollar earned do you actually retain?
 
 These are not philosophical claims. They’re arithmetic inputs to autonomy.
 
@@ -72,7 +72,7 @@ You can argue endlessly about whether any given regulation is good or bad. But y
 
 ## The model: goal-weighted, action-based
 
-This project exists to turn the above into a tool you can interrogate rather than a narrative you can only argue about.
+This project exists to turn the above into a tool you can interrogate rather than a narrative you can only argue about. **The calculator runs entirely in your browser with no backend opacity**, allowing you to see exactly how inputs become outputs.
 
 The model avoids the typical “index” failure mode (opaque expert judgment and political aggregation) by building upward from actions.
 
@@ -108,9 +108,9 @@ That isn’t relativism. It’s workload modeling.
 
 ### 3) Combine fiscal and permission control
 
-Finally, you choose how much you care about fiscal control (tax burden) versus permission control (regulatory friction). The tool combines the two into a single “control” number, and then reports freedom as:
+Finally, you choose how much you care about fiscal control (tax burden) versus permission control (regulatory friction). The tool combines the two into a weighted “Combined Control” score, and then calculates the inverse:
 
-**Freedom = 1 - Control**
+**Freedom = 1 - Combined Control**
 
 If you dislike the assumptions, you can change them: the action list, the weights, the normalization constants, or the dataset. Engineering models are useful precisely because the assumptions are explicit and editable.
 
@@ -123,11 +123,11 @@ The goal is to reveal **what binds you**.
 You can explore the interactive model and compute your own goal-weighted score at
 [tyemirov.net/freedom](https://tyemirov.net/freedom).
 
-The page lets you set personal context (income, household type, spend ratio, home value proxy), choose goals, and weight fiscal versus permission control. Then it shows:
+The page lets you set personal context (income, household type, spend ratio, home value proxy), choose goals, and **select specific jurisdictions to compare side-by-side**. Then it shows:
 
 - a **radar chart** of domain freedom (higher is freer)
 - a **scatter plot** of fiscal control vs permission control (lower-left is freer)
-- a **table** with the top binding domains driving your score
+- a **ranked table** identifying the specific binding domains for each jurisdiction
 
 This is performance engineering applied to jurisdictions: stop arguing about “fast” in the abstract and identify where the latency actually is.
 
@@ -213,6 +213,6 @@ And once it can be measured, it can be engineered.
 
 - **Action friction:** A combined score derived from permissions, time, and penalty severity for a concrete action.
 - **Permission control:** The aggregate friction imposed by a jurisdiction across goal-weighted domains.
-- **Fiscal control:** The effective tax burden and marginal keep rate proxies applied to a personal context.
-- **Marginal keep rate:** The share of the next dollar earned that the individual retains after tax.
+- **Fiscal control:** The effective tax burden and marginal keep proxy applied to a personal context.
+- **Marginal keep proxy:** An estimate of the share of the next dollar earned that the individual retains after tax.
 - **Jurisdictional arbitrage:** The practice of moving residency, business, or assets to lower-friction jurisdictions.

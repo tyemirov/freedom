@@ -26,10 +26,12 @@ This repository contains a tool for quantifying liberty by decomposing it into a
 
 ## Technical Structure
 
--   `index.html`: The core UI, styled with vanilla CSS for maximum performance and portability.
--   `script.js`: The calculation engine and Plotly.js implementation.
+-   **Client-Side Architecture:** The entire calculation engine runs in the browser (`script.js`). No backend logic is required, ensuring transparency and speed.
+-   **MPR-UI Integration:** Uses the Marco Polo Research Lab UI shell (`mpr-ui.js`, `mpr-ui.css`) for consistent navigation and theming.
+-   `index.html`: The core UI, implementing the "Mint & Cream" aesthetic.
 -   `full_states_dataset.json`: A v2.5 dataset containing granular metrics for all 50 US states.
--   `article2.md`: The publication draft for the project essay, intended for [tyemirov.net](https://tyemirov.net/freedom).
+-   `state_shapes.json`: Optimized SVG paths for US state silhouettes.
+-   `article2.md`: The publication draft for the project essay.
 
 ### Dataset Notes
 

@@ -6,35 +6,31 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Freedom vs Control — Goal-Weighted, Action-Based</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="mpr-ui.css" />
   <link rel="stylesheet" href="style.css" />
+  <script src="mpr-ui.js"></script>
 </head>
 <body>
+<mpr-header site-name="The Vector of Liberty" site-link="/freedom"></mpr-header>
+
 <div class="container">
   <div class="header">
     <div>
       <h1>Freedom vs Control — Action-Based Score</h1>
       <p>
-        This version is <span class="mono">action-based</span>: each domain is defined by concrete actions.
-        Your goals change the weights, then the site ranks jurisdictions with radar + scatter + table.
-        <a href="https://tyemirov.net/freedom" style="color:var(--accent); text-decoration:none; margin-left:8px;" class="mono small">tyemirov.net/freedom</a>
+        Stop arguing about freedom in the abstract. This engineering model simulates the specific constraint budget—fiscal and regulatory—imposed on <em>your</em> lifestyle by different jurisdictions. It calculates friction, not vibes.
       </p>
-      <div class="pillRow">
-        <div class="pill">No backend</div>
-        <div class="pill">Action-based friction</div>
-        <div class="pill">Goal-weighted</div>
-      </div>
     </div>
   </div>
 
   <div class="grid">
     <div class="panel">
       <h2>Inputs</h2>
-      <div class="notice">
-        The built-in dataset is still a starter, but the structure is now “real-data-ready”:
-        fill action friction from statutes + admin timelines + penalties, then paste JSON.
-      </div>
 
       <h3>Personal context</h3>
+      <p style="margin-bottom: 14px; font-size: 13px; color: var(--muted); line-height: 1.4;">
+        Freedom is relative to your lifestyle. High earners face steeper fiscal cliffs in progressive tax states. Families face regulatory friction (schooling, zoning) that singles ignore. Your inputs calibrate the friction model to <em>your</em> reality.
+      </p>
       <div class="row">
         <label for="incomeValue">Annual gross income (USD)</label>
         <input id="incomeValue" type="number" min="0" step="1000" value="400000" />
@@ -95,7 +91,15 @@
             <li><strong>Regulatory/Land Use:</strong> <a href="https://www.freedominthe50states.org/" target="_blank" style="color:var(--accent);">Cato Institute: Freedom in the 50 States</a></li>
             <li><strong>Zoning Friction:</strong> <a href="https://www.mercatus.org/publications/urban-economics/freedom-50-states" target="_blank" style="color:var(--accent);">Mercatus Land Use Index</a></li>
           </ul>
-          <p>Domain friction is computed by mapping these indices to action-based components: <em>permission count</em>, <em>wait times</em>, and <em>penalties</em>.</p>
+          <p>Domain friction is computed by mapping these indices to action-based components: <em>permission count</em>, <em>wait times</em>, and <em>penalties</em>. <a href="full_states_dataset.json" target="_blank" style="color:var(--active); font-weight:700;">View Raw Dataset (JSON)</a></p>
+          <div style="margin-top: 12px; padding: 12px; background: rgba(15, 109, 77, 0.05); border-radius: 12px; border: 1px solid rgba(15, 109, 77, 0.15);">
+            <strong style="color:var(--active); font-size:13px;">The Engineering Model</strong>
+            <div class="mono small" style="margin-top:6px; color:#333;">
+              <div>1. Action Friction = (0.4 × Permissions) + (0.4 × Time) + (0.2 × Penalty)</div>
+              <div>2. Domain Friction = Average(Action Frictions)</div>
+              <div style="margin-top:4px; font-weight:700;">3. Freedom = 1 - [(Fiscal Wt × Tax Burden) + (Perm Wt × Reg Friction)]</div>
+            </div>
+          </div>
         </div>
       </details>
     </div>
@@ -105,7 +109,7 @@
 
       <div class="notice" style="margin-bottom:14px;">
         <strong>Compare Jurisdictions:</strong> Select jurisdictions to view on the charts.
-        <div id="selectionList" class="pillRow" style="margin-top:10px; max-height:120px; overflow-y:auto; border:1px solid var(--border); padding:10px; border-radius:10px;">
+        <div id="selectionList" class="pillRow" style="margin-top:10px; max-height:120px; overflow-y:auto; border:1px solid var(--border-color); padding:10px; border-radius:10px; background: #fff;">
           <!-- Checkboxes will be injected here -->
         </div>
         <div class="buttonRow">
@@ -141,13 +145,11 @@
       </div>
     </div>
   </div>
-  <div style="text-align:center; margin-top:40px; padding-bottom:40px; opacity:0.6;" class="small mono">
-    &copy; 2026 <a href="https://tyemirov.net" style="color:var(--text); text-decoration:none;">tyemirov.net</a> | 
-    <a href="https://tyemirov.net/freedom" style="color:var(--text); text-decoration:none;">The Vector of Liberty</a>
-  </div>
 </div>
 
+<mpr-footer></mpr-footer>
+
 <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
-<script src="script.js"></script>
+<script src="script.js?v=20260219"></script>
 </body>
 </html>
