@@ -93,6 +93,21 @@ async function installExternalStubs(page) {
     });
   });
 
+  await page.route("**/loopaware.mprlab.com/pixel.js*", (route) => {
+    route.fulfill({
+      status: 200,
+      contentType: "application/javascript; charset=utf-8",
+      body: "",
+    });
+  });
+
+  await page.route("**/loopaware-api.mprlab.com/public/visits*", (route) => {
+    route.fulfill({
+      status: 204,
+      body: "",
+    });
+  });
+
   await page.route("**/plotly.min.js*", (route) => {
     route.fulfill({
       status: 200,
@@ -114,7 +129,7 @@ async function installExternalStubs(page) {
   });
 }
 
-async function openPage() {
+async function openPage(requestPath = "/") {
   const page = await browserContext.newPage();
 
   const pageErrors = [];
@@ -124,7 +139,8 @@ async function openPage() {
   });
 
   await installExternalStubs(page);
-  await page.goto(baseUrl, { waitUntil: "domcontentloaded" });
+  const pageUrl = new URL(requestPath, `${baseUrl}/`).toString();
+  const response = await page.goto(pageUrl, { waitUntil: "domcontentloaded" });
 
   await page.waitForFunction(() => {
     const selectionCount = document.querySelectorAll('#selectionList input[type="checkbox"]').length;
@@ -132,7 +148,7 @@ async function openPage() {
     return selectionCount === 50 && rowCount > 0;
   });
 
-  return { page, pageErrors };
+  return { page, pageErrors, response };
 }
 
 before(async () => {
@@ -189,6 +205,29 @@ test("loads dataset and renders default results", async () => {
     assert.match(methodologyText, /Methodology/i, "methodology section should exist");
     assert.ok(plotCalls.length >= 2, "should render both radar and scatter charts");
     assert.deepEqual(pageErrors, [], `page should load without JS errors: ${pageErrors.join(" | ")}`);
+  } finally {
+    await page.close();
+  }
+});
+
+test("opens /index.html directly as a regular HTML document", async () => {
+  const { page, pageErrors, response } = await openPage("/index.html");
+  try {
+    const selectionCount = await page.locator('#selectionList input[type="checkbox"]').count();
+    const selectedCount = await page.locator('#selectionList input[type="checkbox"]:checked').count();
+    const tableRows = await page.locator("#resultsBody tr").count();
+
+    assert.equal(response?.status(), 200, "index.html should be served successfully");
+    assert.match(
+      response?.headers()["content-type"] || "",
+      /^text\/html/i,
+      "index.html should be served with an HTML content type",
+    );
+    assert.match(page.url(), /\/index\.html$/, "page URL should remain on /index.html");
+    assert.equal(selectionCount, 50, "should render one selector checkbox per state");
+    assert.equal(selectedCount, 5, "should auto-select first 5 jurisdictions");
+    assert.equal(tableRows, 5, "table should render the selected jurisdictions");
+    assert.deepEqual(pageErrors, [], `index.html should load without JS errors: ${pageErrors.join(" | ")}`);
   } finally {
     await page.close();
   }
