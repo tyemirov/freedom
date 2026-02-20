@@ -155,9 +155,10 @@
 <mpr-footer
   privacy-link-href="https://mprlab.com"
   privacy-link-label="Marco Polo Research Lab"
+  toggle-label="Made by Marco Polo Research Lab"
   links-collection='{
     "style":"drop-up",
-    "text":"Built by Marco Polo Research Lab",
+    "text":"Made by Marco Polo Research Lab",
     "links":[
       {"label":"Marco Polo Research Lab","url":"https://mprlab.com"},
       {"label":"Gravity Notes","url":"https://gravity.mprlab.com"},
@@ -172,6 +173,40 @@
     ]
   }'
 ></mpr-footer>
+
+<script>
+  (function() {
+    function applyFooterDropupFix() {
+      var footer = document.querySelector("mpr-footer");
+      if (!footer) return;
+      var inner = footer.querySelector('[data-mpr-footer="inner"]');
+      if (!inner || !inner.style) return;
+      inner.style.overflowX = "visible";
+      inner.style.overflowY = "visible";
+    }
+
+    function initFooterDropupFix() {
+      applyFooterDropupFix();
+      if (window.customElements && typeof window.customElements.whenDefined === "function") {
+        window.customElements.whenDefined("mpr-footer").then(function() {
+          requestAnimationFrame(applyFooterDropupFix);
+        });
+      }
+      var footer = document.querySelector("mpr-footer");
+      if (footer && typeof MutationObserver === "function") {
+        var observer = new MutationObserver(applyFooterDropupFix);
+        observer.observe(footer, { childList: true, subtree: true });
+        setTimeout(function() { observer.disconnect(); }, 4000);
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initFooterDropupFix);
+    } else {
+      initFooterDropupFix();
+    }
+  })();
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
 <script src="script.js?v=20260219"></script>
