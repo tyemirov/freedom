@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Freedom vs Control — Goal-Weighted, Action-Based</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MarcoPoloResearchLab/mpr-ui@3.6.6/mpr-ui.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MarcoPoloResearchLab/mpr-ui@3.6.7/mpr-ui.css" />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="https://cdn.jsdelivr.net/gh/MarcoPoloResearchLab/mpr-ui@3.6.6/mpr-ui.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/MarcoPoloResearchLab/mpr-ui@3.6.7/mpr-ui.js"></script>
 </head>
 <body>
 <mpr-header
@@ -173,40 +173,6 @@
     ]
   }'
 ></mpr-footer>
-
-<script>
-  (function() {
-    function applyFooterDropupFix() {
-      var footer = document.querySelector("mpr-footer");
-      if (!footer) return;
-      var inner = footer.querySelector('[data-mpr-footer="inner"]');
-      if (!inner || !inner.style) return;
-      inner.style.overflowX = "visible";
-      inner.style.overflowY = "visible";
-    }
-
-    function initFooterDropupFix() {
-      applyFooterDropupFix();
-      if (window.customElements && typeof window.customElements.whenDefined === "function") {
-        window.customElements.whenDefined("mpr-footer").then(function() {
-          requestAnimationFrame(applyFooterDropupFix);
-        });
-      }
-      var footer = document.querySelector("mpr-footer");
-      if (footer && typeof MutationObserver === "function") {
-        var observer = new MutationObserver(applyFooterDropupFix);
-        observer.observe(footer, { childList: true, subtree: true });
-        setTimeout(function() { observer.disconnect(); }, 4000);
-      }
-    }
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initFooterDropupFix);
-    } else {
-      initFooterDropupFix();
-    }
-  })();
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
 <script src="script.js?v=20260219"></script>
