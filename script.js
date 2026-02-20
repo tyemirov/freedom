@@ -317,10 +317,42 @@ function renderScatter(sortedResults){
     Plotly.purge("scatterChart");
     return;
   }
+
+  const xValues = sortedResults.map(function(r){ return r.fiscalControlScore; });
+  const yValues = sortedResults.map(function(r){ return r.permissionControlScore; });
+
+  const clampAxisRange = function(values, lowerFallback, upperFallback) {
+    if (!values.length) {
+      return [lowerFallback, upperFallback];
+    }
+
+    const minValue = Math.min.apply(null, values);
+    const maxValue = Math.max.apply(null, values);
+    const span = Math.max(1e-9, maxValue - minValue);
+    const padding = span * 0.08;
+    const paddedMin = Math.max(0, minValue - padding);
+    const paddedMax = Math.min(1, maxValue + padding);
+
+    if (paddedMin === paddedMax) {
+      const fallbackSpan = Math.max(0.01, Math.min(maxValue, 1 - maxValue, 0.05));
+      return [Math.max(0, maxValue - fallbackSpan), Math.min(1, maxValue + fallbackSpan)];
+    }
+
+    if (paddedMax - paddedMin < 0.05) {
+      const centerValue = (minValue + maxValue) / 2;
+      return [Math.max(0, centerValue - 0.025), Math.min(1, centerValue + 0.025)];
+    }
+
+    return [paddedMin, paddedMax];
+  };
+
+  const xRange = clampAxisRange(xValues, 0, 0.7);
+  const yRange = clampAxisRange(yValues, 0, 0.9);
+
   const plotData = [{
     type:"scatter", mode:"markers+text",
-    x: sortedResults.map(function(r){ return r.fiscalControlScore; }),
-    y: sortedResults.map(function(r){ return r.permissionControlScore; }),
+    x: xValues,
+    y: yValues,
     text: sortedResults.map(function(r){ return r.jurisdictionName; }),
     textposition:"top center",
     hovertemplate: "Jurisdiction: %{text}<br>Fiscal control: %{x:.3f}<br>Permission control: %{y:.3f}<extra></extra>",
@@ -330,8 +362,8 @@ function renderScatter(sortedResults){
   const layout = {
     paper_bgcolor:"rgba(0,0,0,0)", plot_bgcolor:"rgba(0,0,0,0)",
     margin:{ l:55, r:30, t:30, b:50 },
-    xaxis:{ title:{ text:"Fiscal control (higher = more tax burden)", font:{ color:"#000", size:13, weight: 700 } }, tickfont:{ color:"#000", size: 11 }, gridcolor:"rgba(0,0,0,0.15)", zerolinecolor: "rgba(0,0,0,0.3)", range:[0,0.7] },
-    yaxis:{ title:{ text:"Permission control (higher = more friction)", font:{ color:"#000", size:13, weight: 700 } }, tickfont:{ color:"#000", size: 11 }, gridcolor:"rgba(0,0,0,0.15)", zerolinecolor: "rgba(0,0,0,0.3)", range:[0,0.9] },
+    xaxis:{ title:{ text:"Fiscal control (higher = more tax burden)", font:{ color:"#000", size:13, weight: 700 } }, tickfont:{ color:"#000", size: 11 }, gridcolor:"rgba(0,0,0,0.15)", zerolinecolor: "rgba(0,0,0,0.3)", range:xRange },
+    yaxis:{ title:{ text:"Permission control (higher = more friction)", font:{ color:"#000", size:13, weight: 700 } }, tickfont:{ color:"#000", size: 11 }, gridcolor:"rgba(0,0,0,0.15)", zerolinecolor: "rgba(0,0,0,0.3)", range:yRange },
     title:{ text:"Control Map (lower-left is freer)", font:{ color:"#000", size:15, family:"Avenir Next, sans-serif", weight: 900 } },
     showlegend:false
   };

@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { mkdirSync } from "node:fs";
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import os from "node:os";
 import { createServer as createNetServer } from "node:net";
 import path from "node:path";
@@ -17,6 +17,118 @@ let baseUrl;
 let browser;
 let browserContext;
 let chromiumProcess;
+
+const STYLE_FILE_PATH = path.join(ROOT_DIR, "style.css");
+const ARTIFACT_DIR = path.join(ROOT_DIR, "artifacts");
+
+function logFooterCapture(message, details) {
+  if (process.env.DEBUG_FOOTER_CAPTURE !== "1") return;
+  if (details) {
+    // eslint-disable-next-line no-console
+    console.log(`[footer-capture] ${message}`, details);
+  } else {
+    // eslint-disable-next-line no-console
+    console.log(`[footer-capture] ${message}`);
+  }
+}
+
+async function captureFooterRenderState(page, label, viewport) {
+  const targetViewport = viewport || { width: 1366, height: 768 };
+  const suffix = Math.random().toString(36).slice(2, 10);
+  const closedScreenshot = path.join(ARTIFACT_DIR, `${label}-closed-${suffix}.png`);
+  const openScreenshot = path.join(ARTIFACT_DIR, `${label}-open-${suffix}.png`);
+  const footerClip = {
+    x: 0,
+    y: Math.max(0, targetViewport.height - 560),
+    width: targetViewport.width,
+    height: Math.min(560, targetViewport.height),
+  };
+  const footerToggle = page.locator('[data-mpr-footer="toggle-button"]');
+  await footerToggle.waitFor({ state: "visible" });
+  await page.setViewportSize(targetViewport);
+  logFooterCapture(`setting viewport for ${label}`, targetViewport);
+  await page.waitForTimeout(250);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await captureScreenshot(page, closedScreenshot, footerClip);
+  logFooterCapture(`captured closed screenshot for ${label}`, { path: closedScreenshot });
+  await page.evaluate(() => {
+    const toggle = document.querySelector('[data-mpr-footer="toggle-button"]');
+    if (toggle) {
+      toggle.click();
+    }
+  });
+  await page.waitForTimeout(450);
+  await captureScreenshot(page, openScreenshot, footerClip);
+  logFooterCapture(`captured open screenshot for ${label}`, { path: openScreenshot });
+
+  return {
+    label,
+    viewport: targetViewport,
+    closedScreenshot,
+    openScreenshot,
+  };
+}
+
+function assertFooterMenuRenderState(state) {
+  const stateLabel = `footer ${state.label}`;
+  const openStatePsnr = measurePsnr(state.closedScreenshot, state.openScreenshot);
+
+  assert.equal(openStatePsnr < 60, true, `${stateLabel}: open state should differ from closed in rendered output`);
+  assert.equal(
+    Number.isFinite(openStatePsnr),
+    true,
+    `${stateLabel}: open state should produce a finite render delta`,
+  );
+  assert.equal(statSync(state.closedScreenshot).size > 0, true, `${stateLabel}: closed screenshot should be written`);
+  assert.equal(statSync(state.openScreenshot).size > 0, true, `${stateLabel}: open screenshot should be written`);
+}
+
+function measurePsnr(referenceImage, candidateImage) {
+  const stats = spawnSync("ffmpeg", ["-i", referenceImage, "-i", candidateImage, "-lavfi", "psnr=stats_file=-", "-f", "null", "-"], {
+    encoding: "utf8",
+    maxBuffer: 10_000_000,
+  });
+  const output = `${stats.stdout || ""}${stats.stderr || ""}`;
+  const match = output.match(/psnr_avg:([0-9.]+|inf)/i) || output.match(/average:([0-9.]+|inf)/i);
+  if (!match) {
+    throw new Error(`failed to parse psnr from ffmpeg output for ${referenceImage}, ${candidateImage}`);
+  }
+  if (match[1] === "inf") return Number.POSITIVE_INFINITY;
+  return Number.parseFloat(match[1]);
+}
+
+async function captureScreenshot(page, filePath, clip) {
+  const screenshotOptions = {
+    path: filePath,
+    type: "png",
+    timeout: 30000,
+  };
+  if (clip) {
+    screenshotOptions.clip = clip;
+  }
+  try {
+    await page.screenshot(screenshotOptions);
+    return;
+  } catch (error) {
+    if (process.env.DEBUG_FOOTER_CAPTURE === "1") {
+      // eslint-disable-next-line no-console
+      console.log(
+        `[footer-capture] screenshot fallback triggered for ${filePath}`,
+        error && error.message ? error.message : error,
+      );
+    }
+
+    const fallbackOptions = {
+      path: filePath,
+      type: "png",
+      timeout: 30000,
+    };
+    if (clip) {
+      fallbackOptions.clip = clip;
+    }
+    await page.screenshot(fallbackOptions);
+  }
+}
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -151,6 +263,51 @@ async function openPage(requestPath = "/") {
   return { page, pageErrors, response };
 }
 
+async function clickById(page, elementId) {
+  await page.evaluate((id) => {
+    const element = document.getElementById(id);
+    if (!element) {
+      throw new Error(`Unable to locate #${id} for interaction`);
+    }
+    element.click();
+  }, elementId);
+}
+
+async function setInputValue(page, elementId, value) {
+  await page.evaluate((payload) => {
+    const element = document.getElementById(payload.id);
+    if (!element) {
+      throw new Error(`Unable to locate #${payload.id} for input update`);
+    }
+    const nextValue = String(payload.value);
+    element.value = nextValue;
+    element.dispatchEvent(new Event("input", { bubbles: true }));
+    element.dispatchEvent(new Event("change", { bubbles: true }));
+  }, { id: elementId, value });
+}
+
+async function setChecked(page, elementId, value) {
+  await page.evaluate((payload) => {
+    const element = document.getElementById(payload.id);
+    if (!element) {
+      throw new Error(`Unable to locate #${payload.id} for checked update`);
+    }
+    element.checked = Boolean(payload.value);
+    element.dispatchEvent(new Event("change", { bubbles: true }));
+  }, { id: elementId, value });
+}
+
+async function setSelectOption(page, elementId, value) {
+  await page.evaluate((payload) => {
+    const element = document.getElementById(payload.id);
+    if (!element) {
+      throw new Error(`Unable to locate #${payload.id} for select update`);
+    }
+    element.value = payload.value;
+    element.dispatchEvent(new Event("change", { bubbles: true }));
+  }, { id: elementId, value });
+}
+
 before(async () => {
   server = startStaticServer(ROOT_DIR);
   await new Promise((resolve) => {
@@ -236,10 +393,10 @@ test("opens /index.html directly as a regular HTML document", async () => {
 test("selection controls update table and chart state", async () => {
   const { page, pageErrors } = await openPage();
   try {
-    await page.locator("#selectAllBtn").click();
+    await clickById(page, "selectAllBtn");
     await page.waitForFunction(() => document.querySelectorAll("#resultsBody tr").length === 50);
 
-    await page.locator("#selectNoneBtn").click();
+    await clickById(page, "selectNoneBtn");
     await page.waitForFunction(() => document.querySelectorAll("#resultsBody tr").length === 0);
 
     const tableRows = await page.locator("#resultsBody tr").count();
@@ -257,16 +414,16 @@ test("selection controls update table and chart state", async () => {
 test("reset restores default controls and rerenders results", async () => {
   const { page, pageErrors } = await openPage();
   try {
-    await page.fill("#incomeValue", "123456");
-    await page.selectOption("#householdType", "single");
-    await page.fill("#spendRatio", "0.25");
-    await page.fill("#homeValue", "500000");
-    await page.locator("#goalSchoolChoice").check();
-    await page.locator("#goalSpeech").check();
-    await page.fill("#weightFiscal", "10");
-    await page.fill("#weightPermission", "90");
+    await setInputValue(page, "incomeValue", "123456");
+    await setSelectOption(page, "householdType", "single");
+    await setInputValue(page, "spendRatio", "0.25");
+    await setInputValue(page, "homeValue", "500000");
+    await setChecked(page, "goalSchoolChoice", true);
+    await setChecked(page, "goalSpeech", true);
+    await setInputValue(page, "weightFiscal", "10");
+    await setInputValue(page, "weightPermission", "90");
 
-    await page.locator("#resetButton").click();
+    await clickById(page, "resetButton");
     await page.waitForFunction(() => document.querySelectorAll("#resultsBody tr").length === 5);
 
     const income = await page.locator("#incomeValue").inputValue();
@@ -292,4 +449,66 @@ test("reset restores default controls and rerenders results", async () => {
   } finally {
     await page.close();
   }
+});
+
+test("footer built-by menu opens and renders full site list", {
+  skip: !process.env.RUN_FOOTER_SCREENSHOT_TESTS,
+}, async () => {
+  if (!process.env.RUN_FOOTER_SCREENSHOT_TESTS) {
+    return;
+  }
+  mkdirSync(ARTIFACT_DIR, { recursive: true });
+  const desktopSession = await openPage();
+  const mobileSession = await openPage("/index.html");
+  const desktopPage = desktopSession.page;
+  const mobilePage = mobileSession.page;
+  const desktopPageErrors = desktopSession.pageErrors;
+  const mobilePageErrors = mobileSession.pageErrors;
+
+  try {
+    const desktopState = await captureFooterRenderState(desktopPage, "desktop", { width: 1366, height: 768 });
+    const mobileState = await captureFooterRenderState(mobilePage, "mobile", { width: 390, height: 844 });
+
+    assertFooterMenuRenderState(desktopState);
+    assertFooterMenuRenderState(mobileState);
+
+    assert.deepEqual(desktopPageErrors, [], `desktop screenshot flow should not produce JS errors: ${desktopPageErrors.join(" | ")}`);
+    assert.deepEqual(mobilePageErrors, [], `mobile screenshot flow should not produce JS errors: ${mobilePageErrors.join(" | ")}`);
+  } finally {
+    await desktopPage.close();
+    await mobilePage.close();
+  }
+});
+
+test("header and footer legal links point to expected destinations", async () => {
+  const { page, pageErrors } = await openPage();
+  try {
+    const headerBrand = page.locator('[data-mpr-header="brand"]');
+    const privacyLink = page.locator('[data-mpr-footer="privacy-link"]');
+
+    const headerHref = (await headerBrand.getAttribute("href")) || "";
+    const privacyHref = (await privacyLink.getAttribute("href")) || "";
+    const privacyLabel = (await privacyLink.innerText())?.trim();
+
+    assert.equal(
+      headerHref,
+      "https://open.substack.com/pub/vadymtyemirov/p/the-vector-of-liberty",
+      "header brand should link to The Vector of Liberty page",
+    );
+    assert.equal(privacyHref, "https://mprlab.com", "footer privacy/legal link should point at mprlab.com");
+    assert.equal(privacyLabel, "Marco Polo Research Lab", "footer privacy/legal label should be set");
+    assert.deepEqual(pageErrors, [], `header/footer link checks should not produce JS errors: ${pageErrors.join(" | ")}`);
+  } finally {
+    await page.close();
+  }
+});
+
+test("local stylesheet does not override mpr header/footer primitives", async () => {
+  const localCss = readFileSync(STYLE_FILE_PATH, "utf8");
+  const hasHeaderOrFooterSelectors = /\bmpr-(header|footer)\b/.test(localCss);
+  const hasLocalOverrides =
+    /\[data-mpr-(header|footer)\]/.test(localCss) ||
+    /\.mpr-(header|footer)\b/.test(localCss);
+  assert.equal(hasHeaderOrFooterSelectors, false, "style.css should not target mpr-header/mpr-footer");
+  assert.equal(hasLocalOverrides, false, "style.css should not target [data-mpr-header] or [data-mpr-footer]");
 });
